@@ -64,7 +64,7 @@ class KingdomComeDeliverance2Game(BasicGame):
         mods_path = Path(self._organizer.modsPath())
         mod_order_path = Path(self._organizer.overwritePath()) / "mod_order.txt"
 
-        mod_ids = []
+        mod_ids: list[str] = []
         for mod_name in modlist.allModsByProfilePriority():
             if not (modlist.state(mod_name) & mobase.ModState.ACTIVE):
                 continue
